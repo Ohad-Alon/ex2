@@ -28,7 +28,9 @@ public:
      *      An instance of Mtmchkin
     */
     Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards);
-
+    Mtmchkin(const Mtmchkin& other);
+    ~Mtmchkin();
+    Mtmchkin& operator=(const Mtmchkin& other);
 
     /*
      * Play the next Card - according to the instruction in the exercise document
@@ -57,12 +59,13 @@ public:
      */
     GameStatus getGameStatus() const;
 
-    //TODO: complete the Mtmchkin class.
 
 private:
-    //TODO: complete the Mtmchkin class.
-
+    Card* m_cardsArray;
+    int m_numOfCards;
+    int m_turns;
+    Player m_player;
+    GameStatus m_status;
 };
-
 
 #endif //EX2_GAME_H
